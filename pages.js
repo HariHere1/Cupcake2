@@ -45,9 +45,6 @@ function renderHome() {
     <div class="page fade-in">
       <div class="hero">
         <div class="hero-content">
-          <!-- 3D Cupcake Canvas -->
-          <div id="cupcake-canvas-wrap"></div>
-
           <div class="hero-tag">${svgIcon('leaf',14)} Fresh baked daily</div>
           <h1>Order Ahead,<br>Pick Up Fresh</h1>
           <p>Skip the wait. Pre-order your favourites and we'll have them perfectly fresh and ready at your chosen pickup time.</p>
@@ -671,29 +668,35 @@ function renderAuth() {
       <div class="auth-wrap">
         <div class="auth-card">
           <div class="auth-logo">
-            <div class="auth-logo-name">${svgIcon('leaf',24,'var(--brown2)')} Flour &amp; Bloom</div>
+            <div class="auth-logo-name">🧁 Flour &amp; Bloom</div>
             <div class="auth-logo-sub">Pre-order bakery items for pickup</div>
           </div>
+
           <div class="tab-toggle">
             <button class="tab-toggle-btn${isLogin?' active':''}" onclick="State.authMode='login';navigate('auth')">Sign In</button>
             <button class="tab-toggle-btn${!isLogin?' active':''}" onclick="State.authMode='signup';navigate('auth')">Sign Up</button>
           </div>
+
           ${!isLogin ? `
             <div class="form-group">
               <label class="form-label">Full Name</label>
               <input class="form-input" id="auth-name" type="text" placeholder="Jane Smith">
             </div>` : ''}
+
           <div class="form-group">
             <label class="form-label">Email</label>
             <input class="form-input" id="auth-email" type="email" placeholder="hello@example.com">
           </div>
+
           <div class="form-group" style="margin-bottom:24px">
             <label class="form-label">Password</label>
             <input class="form-input" id="auth-pass" type="password" placeholder="••••••••">
           </div>
+
           <button class="btn btn-primary btn-full" onclick="submitAuth()">
             ${isLogin ? 'Sign In' : 'Create Account'}
           </button>
+
           <p style="text-align:center;font-size:12px;color:var(--text3);margin-top:14px">
             ${isLogin ? 'Demo: any email. Use <strong>admin@…</strong> for staff dashboard.' : 'By signing up you agree to our terms.'}
           </p>
